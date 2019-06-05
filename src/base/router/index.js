@@ -10,6 +10,7 @@ let concat = (router) => {
 import HomeRouter from '@/module/home/router'
 import CourseRouter from '@/module/course/router'
 import MediaRouter from '@/module/media/router'
+import CmsRouter from '@/module/cms/router'
 import ExamRouter from '@/module/exam/router'
 import QuestionRouter from '@/module/question/router'
 // import CmsRouter from '@/module/cms/router'
@@ -18,6 +19,7 @@ import QuestionRouter from '@/module/question/router'
 concat(CourseRouter)
 concat(HomeRouter)
 concat(MediaRouter)
+concat(CmsRouter)
 // concat(ExamRouter)
 // concat(QuestionRouter)
 // concat(CmsRouter)
