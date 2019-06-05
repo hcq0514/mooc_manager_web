@@ -1,5 +1,5 @@
 var sysConfig = {
-    xcApiUrlPre: '/api',
+    xcApiUrlPre: 'http://api.mooc.com/api',
     //xcApiUrlPre: '',
     xcApiUrl: 'http://api.xuecheng.com',
     imgUrl:'http://img.xuecheng.com/',

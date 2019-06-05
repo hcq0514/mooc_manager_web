@@ -8,24 +8,24 @@ let apiUrl = sysConfig.xcApiUrlPre;
 export const findCourseList = (page,size,params) => {
 //使用工具类将json对象转成key/value
   let queries = querystring.stringify(params)
-  return http.requestQuickGet(apiUrl+"/course/coursebase/list/"+page+"/"+size+"?"+queries)
+  return http.requestQuickGet(apiUrl+"/course/base/myCourse/"+page+"/"+size+"/1?"+queries)
 }
 
 //查询课程分类
 export const category_findlist= () => {
-  return http.requestQuickGet(apiUrl+'/category/list')
+  return http.requestQuickGet(apiUrl+'/course/category/list')
 }
 /*添加课程基础信息*/
 export const addCourseBase = params => {
-  return http.requestPost(apiUrl+'/course/coursebase/add',params)
+  return http.requestPost(apiUrl+'/course/base/add',params)
 }
 /*查询课程计划*/
 export const findTeachplanList = courseid => {
-  return http.requestQuickGet(apiUrl+'/course/teachplan/list/'+courseid)
+  return http.requestQuickGet(apiUrl+'/course/teachPlan/list/'+courseid)
 }
 /*添加课程计划*/
 export const addTeachplan = teachplah => {
-  return http.requestPost(apiUrl+'/course/teachplan/add',teachplah)
+  return http.requestPost(apiUrl+'/course/teachPlan/add',teachplah)
 }
 
 //保存课程图片地址到课程数据 库
@@ -61,17 +61,17 @@ export const savemedia = teachplanMedia => {
 
 /*根据ID查询课程基本信息*/
 export const getCoursebaseById = courseId => {
-  return http.requestQuickGet(apiUrl + '/course/coursebase/get/' + courseId);
+  return http.requestQuickGet(apiUrl + '/course/base/get/' + courseId);
 }
 /*修改课程基本信息*/
 export const updateCoursebase = (id,course) => {
-  return http.requestPut(apiUrl + '/course/coursebase/update/' + id, course);
+  return http.requestPut(apiUrl + '/course/base/update/' + id, course);
 }
 /*根据ID查询课程营销信息*/
 export const getCourseMarketById = id => {
-  return http.requestQuickGet(apiUrl + '/course/coursemarket/get/' + id);
+  return http.requestQuickGet(apiUrl + '/course/market/get/' + id);
 }
 /*修改课程营销信息*/
 export const updateCourseMarket = (id,coursemarket) => {
-  return http.requestPut(apiUrl + '/course/coursemarket/update/' + id, coursemarket);
+  return http.requestPut(apiUrl + '/course/market/update/' + id, coursemarket);
 }
