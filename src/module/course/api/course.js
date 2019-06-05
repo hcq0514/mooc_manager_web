@@ -64,8 +64,8 @@ export const getCoursebaseById = courseId => {
   return http.requestQuickGet(apiUrl + '/course/base/get/' + courseId);
 }
 /*修改课程基本信息*/
-export const updateCoursebase = (id,course) => {
-  return http.requestPut(apiUrl + '/course/base/update/' + id, course);
+export const updateCoursebase = (course) => {
+  return http.requestPut(apiUrl + '/course/base/update' , course);
 }
 /*根据ID查询课程营销信息*/
 export const getCourseMarketById = id => {

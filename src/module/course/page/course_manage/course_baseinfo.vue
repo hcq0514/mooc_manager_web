@@ -96,7 +96,7 @@
                 this.courseForm.mt = mt;
                 this.courseForm.st = st;
                 let id = this.courseForm.id
-                courseApi.updateCoursebase(id,this.courseForm).then((res) => {
+                courseApi.updateCoursebase(this.courseForm).then((res) => {
                   this.editLoading = false;
                   if(res.success){
                     this.$message({
