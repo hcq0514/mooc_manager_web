@@ -72,6 +72,6 @@ export const getCourseMarketById = id => {
   return http.requestQuickGet(apiUrl + '/course/market/get/' + id);
 }
 /*修改课程营销信息*/
-export const updateCourseMarket = (id,coursemarket) => {
-  return http.requestPut(apiUrl + '/course/market/update/' + id, coursemarket);
+export const updateCourseMarket = (coursemarket) => {
+  return http.requestPut(apiUrl + '/course/market/update' , coursemarket);
 }
