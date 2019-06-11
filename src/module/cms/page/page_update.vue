@@ -51,7 +51,7 @@
   import * as cmsApi from '../api/cms'
 
   export default {
-    data () {
+    data() {
       return {
         form: {
           pageId: '',
@@ -85,17 +85,17 @@
       }
     },
     methods: {
-      searchAllCmsSite () {
+      searchAllCmsSite() {
         cmsApi.searchAllCmsSite().then(value => {
           this.siteList = value.queryResult.list
         })
       },
-      searchAllCmsTemplate () {
+      searchAllCmsTemplate() {
         cmsApi.searchAllCmsTemplate().then(value => {
           this.pageTemplateList = value.queryResult.list
         })
       },
-      submitForm (formName) {
+      submitForm(formName) {
         //检验规则
         this.$refs[formName].validate((valid) => {
           if (valid) {
@@ -119,10 +119,10 @@
         })
       },
       //重置表单
-      resetForm (formName) {
+      resetForm(formName) {
         this.$refs[formName].resetFields()
       },
-      go_back () {
+      go_back() {
         this.$router.push({
           path: '/cms/page/list', query: {
             page: this.$route.query.page,
@@ -132,16 +132,13 @@
       }
     },
     //钩子函数，一进来默认查询页面
-    created () {
+    created() {
       //页面参数通过路由传入，这里通过this.$route.params来获取
-      this.form.pageId = this.$route.params.pageId
+      this.form.pageId = this.$route.params.pageId;
       cmsApi.getCmsPageById(this.form.pageId).then((res) => {
-        if (res.success) {
-          // //根据主键查询页面信息
-          console.log(res)
-          this.form = res.cmsPage
-        }
-      })
+        // //根据主键查询页面信息
+        this.form = res
+      });
       this.searchAllCmsSite()
       this.searchAllCmsTemplate()
     }
